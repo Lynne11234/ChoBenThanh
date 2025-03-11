@@ -14,7 +14,7 @@
             align-items: center;
             width: 100%;
             height: 100%; /* Full screen height */
-            background-image: url("images/bgrep.png");
+            background-image: url("Recipe/images/bgrep.png");
             background-attachment: fixed;
             background-size: cover;
             position: relative;
@@ -171,7 +171,7 @@
             position: absolute;
             width: 400px;
             height: 300px;
-            background-image: url("images/greensq.png");
+            background-image: url("Recipe/images/greensq.png");
             background-size: cover;
             left: 5%;
             top: 50%;
@@ -181,7 +181,8 @@
             align-items: center;
             color: rgb(49, 46, 46);
             box-shadow:5px 5px 10px rgba(0, 0, 0, 0.2);
-            padding: 20px;
+            padding-left: 15px;
+            padding-right: 15px;
             box-sizing: border-box;
         }
         .green-square p {
@@ -202,6 +203,7 @@
                 top: 220px; 
                 left: 50%;
                 transform: translateX(-50%);
+                padding-top: 25px;
             } 
             .blue-rectangle {
                 top: -60px; 
@@ -248,20 +250,20 @@
 <body>
     <div class="blue-rectangle"></div>
     <div class="green-square" id="greenSquare">
-        <p>Your text here</p>
+        <p>Dial phone clockwise to start</p>
     </div>
     <div class="text">
     </div>
     <div class="container">
         <div class="grey-circle" id="greyCircle">
-            <img src="images/phone.PNG" alt="Circle Image">
+            <img src="Recipe/images/phone.PNG" alt="Circle Image">
             <div class="blue-handle" id="blueHandle"></div>
         </div>
         <div class="text">
-            <span><a href="Recipe/BunRieu/bunrieu.html" class="text"><strong>Bun Rieu</strong></a></span>
-            <span><a href="Recipe/BunBoHue/bunbohue.html" class="text"><strong>Bun Bo Hue</strong></a></span>
-            <span><a href="Recipe/BunBoHue/bunbohue.html" class="text"><strong>Bun Mam</strong></a></span>
-            <span><a href="Recipe/BunBoHue/bunbohue.html" class="text"><strong>Bun Cha Ca</strong></a></span>
+            <span><a href="Recipe/bunrieu.html" class="text"><strong>Bun Rieu</strong></a></span>
+            <span><a href="Recipe/bunbohue.html" class="text"><strong>Bun Bo Hue</strong></a></span>
+            <span><a href="Recipe/bunbohue.html" class="text"><strong>Bun Mam</strong></a></span>
+            <span><a href="Recipe/bunbohue.html" class="text"><strong>Bun Cha Ca</strong></a></span>
             <span><a href="link5.html" class="text"><strong>Bun Moc</strong></a></span>
             <span><a href="link6.html" class="text"><strong>Bun Cha</strong></a></span>
             <span><a href="link7.html" class="text"><strong>Bun Mang Vit</strong></a></span>
@@ -291,25 +293,25 @@
         const HEIGHT_PER_SPIN = MAX_HEIGHT / 5; // 80px per spin
 
         const images = [
-            'Recipe/BunRieu/BunRieu.png', // Image for Text 1
-            'Recipe/BunBoHue/bbhimage/bunbohue.png', // Image for Text 2
-            'image3.jpg', // Image for Text 3
-            'image4.jpg', // Image for Text 4
-            'image5.jpg', // Image for Text 5
-            'image6.jpg', // Image for Text 6
-            'image7.jpg', // Image for Text 7
-            'image8.jpg'  // Image for Text 8
+            'Recipe/images/BunRieu.png', // Image for Text 1
+            'Recipe/images/bunbohue.png', // Image for Text 2
+            'Recipe/images/bunmam.jpg', // Image for Text 3
+            'Recipe/images/bunchaca.jpg', // Image for Text 4
+            'Recipe/images/bunmoc.png', // Image for Text 5
+            'Recipe/images/buncha.png', // Image for Text 6
+            'Recipe/images/bunmangvit.png', // Image for Text 7
+            'Recipe/images/bunbonambo.png'  // Image for Text 8
         ];
 
         const texts = [
             'Bún riêu cua is a traditional Vietnamese dish, originating from the Red River Delta in Vietnam. This dish consists of noodles (either bun rối or bun lá) and riêu cua. Riêu cua is a sour soup made from crab roe, crab meat that is pounded and filtered, along with the fruit of the perilla plant, tomatoes, pork fat, fermented rice vinegar, fish sauce, salt, and green onions. This dish has a refreshing, tangy taste. Many street vendors in Vietnam sell bún riêu.',
-            'Paragraph for Text 2',
-            'Paragraph for Text 3',
-            'Paragraph for Text 4',
-            'Paragraph for Text 5',
-            'Paragraph for Text 6',
-            'Paragraph for Text 7',
-            'Paragraph for Text 8'
+            'Bún bò Huế is not only a specialty of the Hue region but also a part of Vietnamese cuisine. The wonderful combination of the rich broth blended with the spicy kick of sa tế (chili oil) and the unique flavor of fermented shrimp paste creates an irresistible taste that captivates diners from the very first bite.',
+            'Bún mắm from the Mekong Delta is a perfect combination of various spices and ingredients, with the most notable being different types of fermented fish, such as fermented fish from the linh fish and the sặc fish. These types of fermented fish carry the strong, distinctive flavors of the countryside and the local winds of the Mekong Delta.',
+            'The broth is the special highlight that captivates diners with the dish of bún chả cá. A quality broth must have a natural sweetness, richness, and no fishy taste. Next is the steamed fish and fish cakes, which are smooth, firm, and aromatic. To make a delicious pot of bún chả cá requires careful attention and meticulousness at every step of the preparation process.',
+            'Bún mọc may look simple, but it is a favorite dish for many people. Bún mọc originated from the village of Mọc, but today it has spread across regions, with slight variations in how it’s cooked in each area. No matter the method, the dish with its sweet bone broth and meatball (pork knuckle) provides a gentle yet delicious flavor for those who enjoy it.',
+            'Bún chả Hanoi is a signature dish of the Northern people. Bún chả is not only loved by the Vietnamese but has also won the hearts of many international guests. The grilled meat, grilled pork patties, and fish sauce are the three key elements that determine the taste of the dish. The grilled meat and patties must have a rich, aromatic flavor, and the fish sauce must have a balanced mix of sour, spicy, salty, and sweet for the bún chả to be truly delicious.',
+            'The duck meat is tender and sweet, and the distinctive bamboo shoots blend beautifully in the hot broth, making it irresistible when enjoying bún măng vịt. Not only is it flavorful, but the unique combination of bamboo shoots and duck meat further captivates the diner. To make a delicious bowl of bún măng vịt, you need to season the spices properly, cooking the broth so it’s not too fatty, and perfecting the dipping sauce to make it rich and flavorful.',
+            'Bún bò Nam Bộ, also known as stir-fried beef noodle, consists of stir-fried or grilled beef served with noodles, along with roasted peanuts, cucumber, fresh herbs, bean sprouts, and a rich sweet and sour fish sauce. It is one of the simplest yet incredibly delicious noodle dishes of the Vietnamese cuisine. The most appealing part of the dish is the sweet and sour sauce poured over and mixed with the noodles. '
         ];
 
         let rotation = 0;
@@ -382,7 +384,7 @@
             greyCircle.style.transform = 'translate(-50%, -50%) rotate(0deg)';
             resetButton.style.display = 'none';
             pinkCircleImage.src = ''; // Clear the pink circle image
-            greenSquare.querySelector('p').innerHTML = 'Your text here'; // Reset the green square text
+            greenSquare.querySelector('p').innerHTML = 'Phonebook Cleared'; // Reset the green square text
         });
     </script>
 </body>
