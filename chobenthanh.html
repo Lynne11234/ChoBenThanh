@@ -14,7 +14,7 @@
             align-items: center;
             width: 100%;
             height: 100%; /* Full screen height */
-            background-image: url("Recipe/images/bgrep.png");
+            background-image: url("images/bgrep.png");
             background-attachment: fixed;
             background-size: cover;
             position: relative;
@@ -22,7 +22,10 @@
         .blue-rectangle {
             width: 100%;
             height: 170px;
-            background: #8C3F3F;
+            background: #343658;
+            background-image: url("images/banner4.PNG");
+            background-size: contain;
+            background-position: center;
             position: absolute;
             top: 0;
             left: 0;
@@ -119,7 +122,7 @@
             bottom: 0;
             left: 0;
             transition: height 0.1s linear;
-            z-index: 0;
+            z-index: 2;
         }
         .reset-button {
             display: none;
@@ -144,7 +147,7 @@
             color: rgb(255, 255, 255);
             text-decoration: underline;
             font-size: 12px; /* Smaller font size */
-            z-index: -1;
+            z-index: 1;
         }
         .pho-link:hover {
             color: rgb(229, 95, 95);
@@ -171,7 +174,7 @@
             position: absolute;
             width: 400px;
             height: 300px;
-            background-image: url("Recipe/images/greensq.png");
+            background-image: url("images/greensq.png");
             background-size: cover;
             left: 5%;
             top: 50%;
@@ -209,6 +212,8 @@
                 top: -60px; 
                 left: 50%;
                 transform: translateX(-50%);
+                background-size: cover;
+                background-position: center;
             }
             .grey-circle {
                 width: 200px;
@@ -256,14 +261,14 @@
     </div>
     <div class="container">
         <div class="grey-circle" id="greyCircle">
-            <img src="Recipe/images/phone.PNG" alt="Circle Image">
+            <img src="images/phone.PNG" alt="Circle Image">
             <div class="blue-handle" id="blueHandle"></div>
         </div>
         <div class="text">
-            <span><a href="Recipe/bunrieu.html" class="text"><strong>Bun Rieu</strong></a></span>
-            <span><a href="Recipe/bunbohue.html" class="text"><strong>Bun Bo Hue</strong></a></span>
-            <span><a href="Recipe/bunbohue.html" class="text"><strong>Bun Mam</strong></a></span>
-            <span><a href="Recipe/bunbohue.html" class="text"><strong>Bun Cha Ca</strong></a></span>
+            <span><a href="bunrieu.html" class="text"><strong>Bun Rieu</strong></a></span>
+            <span><a href="bunbohue.html" class="text"><strong>Bun Bo Hue</strong></a></span>
+            <span><a href="bunmam.html" class="text"><strong>Bun Mam</strong></a></span>
+            <span><a href="bunchaca.html" class="text"><strong>Bun Cha Ca</strong></a></span>
             <span><a href="link5.html" class="text"><strong>Bun Moc</strong></a></span>
             <span><a href="link6.html" class="text"><strong>Bun Cha</strong></a></span>
             <span><a href="link7.html" class="text"><strong>Bun Mang Vit</strong></a></span>
@@ -293,14 +298,14 @@
         const HEIGHT_PER_SPIN = MAX_HEIGHT / 5; // 80px per spin
 
         const images = [
-            'Recipe/images/BunRieu.png', // Image for Text 1
-            'Recipe/images/bunbohue.png', // Image for Text 2
-            'Recipe/images/bunmam.jpg', // Image for Text 3
-            'Recipe/images/bunchaca.jpg', // Image for Text 4
-            'Recipe/images/bunmoc.png', // Image for Text 5
-            'Recipe/images/buncha.png', // Image for Text 6
-            'Recipe/images/bunmangvit.png', // Image for Text 7
-            'Recipe/images/bunbonambo.png'  // Image for Text 8
+            'images/BunRieu.png', // Image for Text 1
+            'images/bunbohue.png', // Image for Text 2
+            'images/bunmam.jpg', // Image for Text 3
+            'images/bunchaca.png', // Image for Text 4
+            'images/bunmoc.png', // Image for Text 5
+            'images/buncha.png', // Image for Text 6
+            'images/bunmangvit.png', // Image for Text 7
+            'images/bunbonambo.jpeg'  // Image for Text 8
         ];
 
         const texts = [
