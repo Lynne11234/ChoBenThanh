@@ -9,6 +9,7 @@ body {
     font-family: 'Inter', sans-serif;
     font-size: 14px;
     color:  #8C3F3F;
+    overflow-x: hidden;
 }
 .star-container {
         display: flex;
