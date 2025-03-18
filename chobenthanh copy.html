@@ -328,63 +328,123 @@
         let initialAngle = 0;
         let fullSpins = 0;
 
-        greyCircle.addEventListener('mousedown', (event) => {
-            mouseHoldSound.play();
-            const rect = greyCircle.getBoundingClientRect();
-            const centerX = rect.left + rect.width / 2;
-            const centerY = rect.top + rect.height / 2;
+        //mouse events
+greyCircle.addEventListener('mousedown', (event) => {
+    mouseHoldSound.play();
+    const rect = greyCircle.getBoundingClientRect();
+    const centerX = rect.left + rect.width / 2;
+    const centerY = rect.top + rect.height / 2;
 
-            const mouseX = event.clientX;
-            const mouseY = event.clientY;
+    const mouseX = event.clientX;
+    const mouseY = event.clientY;
 
-            initialAngle = Math.atan2(mouseY - centerY, mouseX - centerX) * (180 / Math.PI);
+    initialAngle = Math.atan2(mouseY - centerY, mouseX - centerX) * (180 / Math.PI);
 
-            const onMouseMove = (event) => {
-                const mouseX = event.clientX;
-                const mouseY = event.clientY;
+    const onMouseMove = (event) => {
+    const mouseX = event.clientX;
+    const mouseY = event.clientY;
 
-                const angle = Math.atan2(mouseY - centerY, mouseX - centerX) * (180 / Math.PI);
-                const deltaAngle = angle - initialAngle;
+    const angle = Math.atan2(mouseY - centerY, mouseX - centerX) * (180 / Math.PI);
+    const deltaAngle = angle - initialAngle;
 
-                rotation += deltaAngle;
-                initialAngle = angle;
+    rotation += deltaAngle;
+    initialAngle = angle;
 
-                // Snap to the nearest 45-degree increment
-                const snappedRotation = Math.round(rotation / 45) * 45;
+    // Snap to the nearest 45-degree increment
+    const snappedRotation = Math.round(rotation / 45) * 45;
 
-                requestAnimationFrame(() => {
-                    greyCircle.style.transform = `translate(-50%, -50%) rotate(${snappedRotation}deg)`;
-                });
+    requestAnimationFrame(() => {
+        greyCircle.style.transform = `translate(-50%, -50%) rotate(${snappedRotation}deg)`;
+    });
 
-                // Calculate full spins
-                const spins = Math.floor(snappedRotation / 360);
-                if (spins !== fullSpins) {
-                    fullSpins = spins;
-                    const height = Math.min(fullSpins * HEIGHT_PER_SPIN, MAX_HEIGHT); // Max height 400px for 5 full spins
-                    whiteBox.style.height = `${height}px`;
-                    console.log('Full Spins:', fullSpins, 'White Box Height:', height);
-                    if (height >= MAX_HEIGHT) {
-                        resetButton.style.display = 'block';
-                    }
-                }
+    // Calculate full spins
+    const spins = Math.floor(snappedRotation / 360);
+    if (spins !== fullSpins) {
+        fullSpins = spins;
+        const height = Math.min(fullSpins * HEIGHT_PER_SPIN, MAX_HEIGHT); // Max height 400px for 5 full spins
+        whiteBox.style.height = `${height}px`;
+        console.log('Full Spins:', fullSpins, 'White Box Height:', height);
+        if (height >= MAX_HEIGHT) {
+        resetButton.style.display = 'block';
+        }
+    }
 
-                // Update pink circle image and green square text based on rotation
-                const index = (snappedRotation / 45) % 8;
-                pinkCircleImage.src = images[index];
-                greenSquare.querySelector('p').innerHTML = texts[index];
-            };
+    // Update pink circle image and green square text based on rotation
+    const index = (snappedRotation / 45) % 8;
+    pinkCircleImage.src = images[index];
+    greenSquare.querySelector('p').innerHTML = texts[index];
+    };
 
-            const onMouseUp = () => {
-                mouseHoldSound.pause();
-                mouseHoldSound.currentTime = 0;
-                mouseReleaseSound.play();
-                document.removeEventListener('mousemove', onMouseMove);
-                document.removeEventListener('mouseup', onMouseUp);
-            };
+    const onMouseUp = () => {
+    mouseHoldSound.pause();
+    mouseHoldSound.currentTime = 0;
+    mouseReleaseSound.play();
+    document.removeEventListener('mousemove', onMouseMove);
+    document.removeEventListener('mouseup', onMouseUp);
+    };
 
-            document.addEventListener('mousemove', onMouseMove);
-            document.addEventListener('mouseup', onMouseUp);
-        });
+    document.addEventListener('mousemove', onMouseMove);
+    document.addEventListener('mouseup', onMouseUp);
+});
+
+//touch events
+greyCircle.addEventListener('touchstart', (event) => {
+    mouseHoldSound.play();
+    const rect = greyCircle.getBoundingClientRect();
+    const centerX = rect.left + rect.width / 2;
+    const centerY = rect.top + rect.height / 2;
+
+    const touchX = event.touches[0].clientX;
+    const touchY = event.touches[0].clientY;
+
+    initialAngle = Math.atan2(touchY - centerY, touchX - centerX) * (180 / Math.PI);
+
+    const onTouchMove = (event) => {
+    const touchX = event.touches[0].clientX;
+    const touchY = event.touches[0].clientY;
+
+    const angle = Math.atan2(touchY - centerY, touchX - centerX) * (180 / Math.PI);
+    const deltaAngle = angle - initialAngle;
+
+    rotation += deltaAngle;
+    initialAngle = angle;
+
+    // snap to 45degree
+    const snappedRotation = Math.round(rotation / 45) * 45;
+
+    requestAnimationFrame(() => {
+        greyCircle.style.transform = `translate(-50%, -50%) rotate(${snappedRotation}deg)`;
+    });
+
+    // full spins
+    const spins = Math.floor(snappedRotation / 360);
+    if (spins !== fullSpins) {
+        fullSpins = spins;
+        const height = Math.min(fullSpins * HEIGHT_PER_SPIN, MAX_HEIGHT); // Max height 400px for 5 full spins
+        whiteBox.style.height = `${height}px`;
+        console.log('Full Spins:', fullSpins, 'White Box Height:', height);
+        if (height >= MAX_HEIGHT) {
+        resetButton.style.display = 'block';
+        }
+    }
+
+    // Update image and text based on rotation
+    const index = (snappedRotation / 45) % 8;
+    pinkCircleImage.src = images[index];
+    greenSquare.querySelector('p').innerHTML = texts[index];
+    };
+
+    const onTouchEnd = () => {
+    mouseHoldSound.pause();
+    mouseHoldSound.currentTime = 0;
+    mouseReleaseSound.play();
+    document.removeEventListener('touchmove', onTouchMove);
+    document.removeEventListener('touchend', onTouchEnd);
+    };
+
+    document.addEventListener('touchmove', onTouchMove);
+    document.addEventListener('touchend', onTouchEnd);
+});
 
         resetButton.addEventListener('click', () => {
             resetSound.play();
