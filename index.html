@@ -97,6 +97,7 @@
         }
         .text:hover {
             color: #c40a0a;
+        
         }
         .text span {
             position: absolute;
@@ -174,6 +175,17 @@
             border-radius: 50%;
             object-fit: cover;
         }
+        .pink-circle:hover {
+            animation: circle 10s infinite linear; /* https://stackoverflow.com/questions/68784013/how-to-make-the-button-in-such-a-way-that-hovering-it-results-in-the-rotation-an */
+        }
+            @keyframes circle {
+            from {
+                transform: translateY(-50%) rotate(0deg); 
+            }
+            to {
+                transform: translateY(-50%) rotate(360deg); 
+            }
+        }
         .green-square {
             position: absolute;
             width: 400px;
@@ -203,6 +215,17 @@
                 left: 50%;
                 transform: translateX(-50%);
             } /*mobile view*/
+            .pink-circle:hover {
+            animation: circle 10s infinite linear; /* https://stackoverflow.com/questions/68784013/how-to-make-the-button-in-such-a-way-that-hovering-it-results-in-the-rotation-an */
+        }
+            @keyframes circle {
+            from {
+                transform: translateX(-50%) rotate(0deg); 
+            }
+            to {
+                transform: translateX(-50%) rotate(360deg); 
+            }
+        }
             .container {
                 margin-top: 40vh; /* Move 40% downwards relative to the screen height */
             }

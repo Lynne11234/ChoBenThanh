@@ -1,7 +1,6 @@
 body {
     background-image: url('images/bgrep.png');
     height: 100%;
-    width: 100%;
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -10,6 +9,12 @@ body {
     font-size: 14px;
     color:  #8C3F3F;
     overflow-x: hidden;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    width: 100%; 
+    position: relative;
+    overscroll-behavior-y: none; /* no overscrolling yesss (https://www.bram.us/2016/05/02/prevent-overscroll-bounce-in-ios-mobilesafari-pure-css/) */
 }
 .star-container {
         display: flex;
@@ -37,7 +42,6 @@ body {
     background: none;
     background-image: url("images/tem2.PNG");
     background-size: cover;
-
 }
 
 h1 {
@@ -127,6 +131,15 @@ li {
     object-fit: cover;
     pointer-events: none; /* Make the image unclickable */
     user-select: none; /* Prevent the image from being highlighted */
+    animation: circle 30s infinite linear;
+}
+@keyframes circle {
+    from {
+        transform: rotate(0deg); 
+    }
+    to {
+        transform: rotate(360deg); 
+    }
 }
 .recipe-button {
     background-color: #8C3F3F;
