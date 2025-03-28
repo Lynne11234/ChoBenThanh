@@ -1,13 +1,10 @@
+
 body {
     background-image: url('images/bgrep.png');
     height: 100%;
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    margin: 0;
-    font-family: 'Inter', sans-serif;
-    font-size: 14px;
-    color:  #8C3F3F;
     overflow-x: hidden;
     margin: 0;
     display: flex;
@@ -15,6 +12,27 @@ body {
     width: 100%; 
     position: relative;
     overscroll-behavior-y: none; /* no overscrolling yesss (https://www.bram.us/2016/05/02/prevent-overscroll-bounce-in-ios-mobilesafari-pure-css/) */
+}
+@font-face {
+    font-family: 'Danh-Da'; /*https://republi.sh/#danhda/info*/
+    src: url('fonts/DanhDa-Bold.woff') format('woff');
+    src: url('fonts/DanhDa-Bold.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Westgate'; /*https://republi.sh/#westgate/info*/
+    src: url('fonts/Westgate-Light.woff') format('woff');
+    src: url('fonts/Westgate-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Finesse'; /*https://republi.sh/#finesse*/
+    src: url('fonts/Finesse-Italic.woff') format('woff');
+    src: url('fonts/Finesse-Italic.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
 }
 .star-container {
         display: flex;
@@ -31,6 +49,7 @@ body {
         background-color: #8C3F3F;
         clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
         margin-right: 5px;
+       
     
 }
 .red-box {
@@ -45,26 +64,27 @@ body {
 }
 
 h1 {
-    font-family: 'Inknut Antiqua', serif;
-    color: black;
-    font-size: 64px;
+    font-family: 'Finesse', 'woff';
+    color:  #7f2727;    
+    font-size: 95px;
     font-weight: 200;
     word-wrap: break-word;
     text-align: left;
-    margin-left: 160px;
-    top: 45px;
+    margin-left: 152px;
+    top: 38px;
     position: absolute;
 }
 h2 {
-    font-family: "inter", sans-serif;
-    font-size: 40px;
-    color: rgb(0, 0, 0);
+    font-family: "westgate", 'woff';
+    font-size: 50px;
+    color: rgb(255, 255, 255);
+    opacity: 0.93;
     text-align: left;
     margin-bottom: 200px;
     margin-left: 160px;
     padding: 0;
     font-weight: 400;
-    top: 130px;
+    top: 120px;
     position: relative;
 }
 .content-box {
@@ -75,9 +95,12 @@ h2 {
     margin-right: 400px;
     height: auto;
 }
+.ingredients {
+        column-count: 2;
+      }
 p {
-    font-family: 'Inter', sans-serif;
-    font-size: 18px;
+    font-family: 'Danh-Da', sans-serif;
+    font-size: 35px;
     color: #333;
     text-align: left;
     margin-left: 50px;
@@ -85,6 +108,7 @@ p {
     margin-top: 20px;
 }
 li {
+
     font-family: 'Inter', sans-serif;
     font-size: 14px;
     color: #333;
@@ -94,14 +118,15 @@ li {
     margin-top: 20px;
     line-height: 1.5;
     margin-bottom: 10px;
+    
 }
 .subtitle {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Danh-Da', sans-serif;
     color:  #8C3F3F;
     text-align: left;
     margin-left: 50px;
     margin-top: 50px;
-        font-size: 24px;
+        font-size: 50px;
         font-weight: 700;
         text-transform: uppercase;
         line-height: 48px;
@@ -117,7 +142,6 @@ li {
 .red-circle {
     width: 600px;
     height: 600px;
-    background-color: red;
     border-radius: 50%;
     position: absolute;
     top: 180px;
@@ -131,16 +155,18 @@ li {
     object-fit: cover;
     pointer-events: none; /* Make the image unclickable */
     user-select: none; /* Prevent the image from being highlighted */
-    animation: circle 30s infinite linear;
+    animation: 30s infinite linear;
+    animation-name: rotate; /* has to define animation name or else will bug*/
 }
-@keyframes circle {
+
+@keyframes rotate {
     from {
         transform: rotate(0deg); 
     }
     to {
         transform: rotate(360deg); 
     }
-}
+} 
 .recipe-button {
     background-color: #8C3F3F;
     color: white;
@@ -165,9 +191,9 @@ li {
             }
 .difficulty {
     margin-bottom: 0%; 
-    color: black; 
-    font-family: 'Inter', sans-serif;
-    font-size: 30px;
+    color: #333;
+    font-family: 'Danh-Da', sans-serif;
+    font-size: 40px;
     font-weight: 500;
     padding-right: 10px;
     margin-top: 5px;
@@ -190,16 +216,16 @@ li {
         margin-right: 20px;
     } /*mobile view*/
     h1 {
-        font-size: 40px;
+        font-size: 58px;
         text-align: left;
         margin-left: 90px;
-        top: 45px;
+        top: 40px;
         position: absolute;
     }
     h2 {
-        font-size: 20px;
-        margin-left: 90px;
-        top: 100px;
+        font-size: 28px;
+        margin-left: 94px;
+        top: 95px;
     }
     .red-box {
         width: 50px;
@@ -229,8 +255,7 @@ li {
         z-index: -1;
     }
     p {
-    font-family: 'Inter', sans-serif;
-    font-size: 14px;
+    font-size: 20px;
     color: #333;
     text-align: left;
     margin-left: 20px;
@@ -249,12 +274,11 @@ li {
     margin-bottom: 10px;
 }
 .subtitle {
-    font-family: 'Inter', sans-serif;
     color:  #8C3F3F;
     text-align: left;
     margin-left: 20px;
     margin-top: 20px;
-        font-size: 20px;
+        font-size: 30px;
         font-weight: 700;
         text-transform: uppercase;
         line-height: 30px;
@@ -288,11 +312,13 @@ li {
 }
 .difficulty {
     margin-bottom: 0%; 
-    color: black; 
-    font-family: 'Inter', sans-serif;
-    font-size: 15px;
+    font-size: 20px;
     font-weight: 600;
     padding-right: 5px;
     margin-top: 3px;
 }
-    }
+
+.ingredients {
+    column-count: 1;
+}
+}
