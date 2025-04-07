@@ -4,21 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cho Ben Thanh</title>
-    <style>
-        
+    <style> 
         body {
             margin: 0;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            width: 100vw; /* Full viewport width */
-            height: 100vh; /* Full viewport height */
+            width: 100%; 
+            height: 100%; 
             background-image: url("images/bgrep.png");
             background-attachment: fixed;
             background-size: cover;
             position: relative;
+            
         }
+
+
         .blue-rectangle {
             width: 100%;
             height: 170px;
@@ -74,49 +76,6 @@
             cursor: grab;
             z-index: 3;
         }
-        .text {
-            position: absolute;
-            width: 78px; /* 300px (circle diameter) + 60px (30px padding on each side) */
-            height: 360px;
-            color: rgb(108, 25, 25);
-            font-size: 14pt;
-            line-height: 23px;
-            font-family: 'Inter', sans-serif;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            text-decoration: none;
-            text-shadow: 1px 2px 2px rgba(42, 25, 25, 0.2);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            pointer-events:stroke; /* Make the text clickable */
-            user-select: none; /* Prevent the text from being highlighted */
-            z-index: 1;
-        }
-        .text:hover {
-            color: #c40a0a;
-        
-        }
-        .text span {
-            position: absolute;
-            transform-origin: center;
-        }
-        .text span:nth-child(1) { 
-            transform: 
-                rotate(0deg) 
-                translate(210px) /* 150px (circle radius) + 70px (padding) */
-                rotate(0deg); 
-        }
-        .text span:nth-child(2) { transform: rotate(45deg) translate(210px) rotate(-45deg); }
-        .text span:nth-child(3) { transform: rotate(90deg) translate(210px) rotate(-90deg); }
-        .text span:nth-child(4) { transform: rotate(135deg) translate(210px) rotate(-135deg); }
-        .text span:nth-child(5) { transform: rotate(180deg) translate(210px) rotate(-180deg); }
-        .text span:nth-child(6) { transform: rotate(225deg) translate(210px) rotate(-225deg); }
-        .text span:nth-child(7) { transform: rotate(270deg) translate(210px) rotate(-270deg); }
-        .text span:nth-child(8) { transform: rotate(315deg) translate(210px) rotate(-315deg); }
-
         .white-box {
             width: 100%;
             height: 0;
@@ -126,34 +85,6 @@
             left: 0;
             transition: height 0.1s linear;
             z-index: 2;
-        }
-        .reset-button {
-            display: none;
-            position: fixed;
-            bottom: 20px;
-            left: 50%;
-            transform: translateX(-40%);
-            padding: 10px 20px;
-            background-color: #8C3F3F;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            z-index: 5;
-        }
-        .pho-link {
-            position: absolute;
-            bottom: -100px;
-            left: 50%;
-            transform: translateX(-50%);
-            z-index: 5;
-            color: rgb(255, 255, 255);
-            text-decoration: underline;
-            font-size: 12px; /* Smaller font size */
-            z-index: 1;
-        }
-        .pho-link:hover {
-            color: rgb(229, 95, 95);
         }
         .pink-circle {
             position: absolute;
@@ -175,18 +106,6 @@
             border-radius: 50%;
             object-fit: cover;
         }
-        .pink-circle:hover {
-            animation: 10s infinite linear; /* https://stackoverflow.com/questions/68784013/how-to-make-the-button-in-such-a-way-that-hovering-it-results-in-the-rotation-an */
-            animation-name: circle;
-        }
-            @keyframes circle {
-            from {
-                transform: translateY(-50%) rotate(0deg); 
-            }
-            to {
-                transform: translateY(-50%) rotate(360deg); 
-            }
-        }
         .green-square {
             position: absolute;
             width: 400px;
@@ -205,12 +124,117 @@
             padding-right: 15px;
             box-sizing: border-box;
         }
+
+
+       
+
+        .reset-button {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-40%);
+            padding: 10px 20px;
+            background-color: #8C3F3F;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            z-index: 5;
+        }
+        .pho-link:hover {
+            color: rgb(229, 95, 95);
+        }
+        .text:hover {
+            color: #c40a0a;
+        
+        }
+        .pink-circle:hover {
+            animation: 10s infinite linear; /* https://stackoverflow.com/questions/68784013/how-to-make-the-button-in-such-a-way-that-hovering-it-results-in-the-rotation-an */
+            animation-name: circle;
+        }
+            @keyframes circle {
+            from {
+                transform: translateY(-50%) rotate(0deg); 
+            }
+            to {
+                transform: translateY(-50%) rotate(360deg); 
+            }
+        }
+        
+
+
+
+        @font-face {
+    font-family: 'Finesse'; /*https://republi.sh/#finesse*/
+    src: url('fonts/Finesse-Italic.woff') format('woff');
+    src: url('fonts/Finesse-Italic.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+        .text {
+            position: absolute;
+            width: 78px; /* 300px (circle diameter) + 60px (30px padding on each side) */
+            height: 360px;
+            color: rgb(108, 25, 25);
+            font-size: 14pt;
+            line-height: 23px;
+            font-family: 'Finesse', 'woff';
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-decoration: none;
+            text-shadow: 1px 2px 2px rgba(42, 25, 25, 0.2);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            pointer-events:stroke; /* Make the text clickable */
+            user-select: none; /* Prevent the text from being highlighted */
+            z-index: 1;
+        }
+        .pho-link {
+            position: absolute;
+            bottom: -100px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 5;
+            color: rgb(255, 255, 255);
+            text-decoration: underline;
+            font-size: 12px; /* Smaller font size */
+            z-index: 1;
+        }
+        .text span {
+            position: absolute;
+            transform-origin: center;
+        }
+        .text span:nth-child(1) { 
+            transform: 
+                rotate(0deg) 
+                translate(210px) /* 150px (circle radius) + 70px (padding) */
+                rotate(0deg); 
+        }
+        .text span:nth-child(2) { transform: rotate(45deg) translate(210px) rotate(-45deg); }
+        .text span:nth-child(3) { transform: rotate(90deg) translate(210px) rotate(-90deg); }
+        .text span:nth-child(4) { transform: rotate(135deg) translate(210px) rotate(-135deg); }
+        .text span:nth-child(5) { transform: rotate(180deg) translate(210px) rotate(-180deg); }
+        .text span:nth-child(6) { transform: rotate(225deg) translate(210px) rotate(-225deg); }
+        .text span:nth-child(7) { transform: rotate(270deg) translate(210px) rotate(-270deg); }
+        .text span:nth-child(8) { transform: rotate(315deg) translate(210px) rotate(-315deg); }
+
         .green-square p {
             font-size: 10pt;
             line-height: 25px;
             font-family: 'Inter', sans-serif;
         }
+
+
+   
         @media (max-width: 900px) {
+            .body {
+                width: 100vw;
+                height: 100vh;
+            }
             .pink-circle {
                 top: -9%; /* Half of the circle's height */
                 left: 50%;
@@ -302,14 +326,14 @@
             <div class="blue-handle" id="blueHandle"></div>
         </div>
         <div class="text">
-            <span><a href="bunrieu.html" class="text"><strong>Bun Rieu</strong></a></span>
-            <span><a href="bunbohue.html" class="text"><strong>Bun Bo Hue</strong></a></span>
-            <span><a href="bunmam.html" class="text"><strong>Bun Mam</strong></a></span>
-            <span><a href="bunchaca.html" class="text"><strong>Bun Cha Ca</strong></a></span>
-            <span><a href="link5.html" class="text"><strong>Bun Moc</strong></a></span>
-            <span><a href="link6.html" class="text"><strong>Bun Cha</strong></a></span>
-            <span><a href="link7.html" class="text"><strong>Bun Mang Vit</strong></a></span>
-            <span><a href="link8.html" class="text"><strong>Bun Bo Nam Bo</strong></a></span>
+            <span><a href="bunrieu.html" class="text"><strong>BÚN RIÊU</strong></a></span>
+            <span><a href="bunbohue.html" class="text"><strong>BÚN BÒ HUẾ</strong></a></span>
+            <span><a href="bunmam.html" class="text"><strong>BÚN MẮM</strong></a></span>
+            <span><a href="bunchaca.html" class="text"><strong>BÚN CHẢ CÁ</strong></a></span>
+            <span><a href="link5.html" class="text"><strong>BÚN MỌC</strong></a></span>
+            <span><a href="link6.html" class="text"><strong>BÚN CHẢ</strong></a></span>
+            <span><a href="link7.html" class="text"><strong>BÚN MĂNG VỊT</strong></a></span>
+            <span><a href="link8.html" class="text"><strong>BÚN BÒ NAM BỘ</strong></a></span>
         </div>
     </div>
     <div class="white-box" id="whiteBox"></div>
@@ -331,8 +355,8 @@
         const pinkCircleImage = document.getElementById('pinkCircleImage');
         const greenSquare = document.getElementById('greenSquare');
         resetSound.volume = 0.6; // Set volume to 60%
-        const MAX_HEIGHT = 400; // Max height 400px for 5 full spins
-        const HEIGHT_PER_SPIN = MAX_HEIGHT / 5; // 80px per spin
+        const MAX_HEIGHT = 200; // Max height 200px for 5 full spins
+        const HEIGHT_PER_SPIN = MAX_HEIGHT / 5; // 40px per spin
 
         const images = [
             'images/BunRieu.png', // Image for Text 1

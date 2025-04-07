@@ -17,12 +17,41 @@
             background-size: cover;
             position: relative;
         }
+        h1 {
+            font-size: 50px;
+        }
+            div {
+             width: 225px;
+            height: 10px;
+            background: red;
+            position: relative;
+            animation: mymove 5s infinite; /*https://www.w3schools.com/cssref/tryit.php?filename=trycss3_keyframes4*/
+        }
+        .div-text {
+            position: absolute;
+            top: 2px;
+            left: 0px;
+            width: 300px;
+            height: 45px;
+            text-align: center;
+            color: rgb(255, 255, 255);
+            font-size: 20px;
+            animation: mymove 10s infinite;
+        }
+
+@keyframes mymove {
+    0%   {transform: translate(0, -80%) rotate(0deg); background: red;}
+    25%  {transform: translate(80%, 0) rotate(90deg); background: blue;}
+    50%  {transform: translate(0, 80%) rotate(180deg); background: yellow;}
+    75%  {transform: translate(-80%, 0) rotate(270deg); background: green;}
+    100% {transform: translate(0, -80%) rotate(360deg); background: red;}
+}
     </style>
 </head>
 <body>
-    <div style="display: flex; flex-direction: column; align-items: center;">
+    <div>
         <h1>404-Error</h1>
-        <p style="position: relative; top: -30px;">Oh no! Something went wrong, <a href="index.html">click here to go back</a></p>
+        <p class="div-text">Oh no! Something went wrong, <a href="index.html">click here to go back</a></p>
     </div>
 </body>
 </html>

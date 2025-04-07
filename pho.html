@@ -21,7 +21,17 @@
 </head>
 <body>
     <div style="display: flex; flex-direction: column; align-items: center;">
-        <h1>pho is overrated</h1>
+        <span style="animation: flicker 1s infinite;"><h1>pho is overrated</h1></span>
+        <style>
+            @keyframes flicker {
+                0%, 100% {
+                    color: black;
+                }
+                50% {
+                    color: rgb(206, 14, 14);
+                }
+            }
+        </style>
         <p style="position: relative; top: -30px;">jk, here's the <a href="404.html">actual recipe</a></p>
     </div>
 </body>
