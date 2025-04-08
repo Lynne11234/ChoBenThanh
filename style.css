@@ -269,7 +269,7 @@ li {
     .red-circle {
         width: 400px;
         height: 400px;
-        background-color: red;
+        background-color: none;
         border-radius: 50%;
         position: absolute;
         top: 170px;
