@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#6c1919" media="(prefers-color-scheme: light)">
-    <meta name="theme-color" content="#521212" media="(prefers-color-scheme: dark)">
+    <meta name="theme-color" content="#521212" media="(prefers-color-scheme: dark)"> <!--https://medium.com/@adboio/how-to-change-your-websites-address-bar-color-in-safari-15-4c032c86daab-->
     <title>Cho Ben Thanh</title>
     <style> 
+   
         body {
             background-color: #e6bb87;
             margin: 0;
@@ -20,7 +21,6 @@
             background-attachment: fixed;
             background-size: cover;
             position: relative;
-            
         }
 
 
@@ -511,6 +511,8 @@ greyCircle.addEventListener('touchstart', (event) => {
             pinkCircleImage.src = ''; // Clear the pink circle image
             greenSquare.querySelector('p').innerHTML = 'Phonebook Cleared'; // Reset the green square text
         });
+
+     ScrollTrigger.config({ ignoreMobileResize: true });
     </script>
 </body>
 </html>
