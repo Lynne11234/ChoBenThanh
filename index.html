@@ -21,8 +21,8 @@
             background-attachment: fixed;
             background-size: cover;
             position: relative;
-            overscroll-behavior-y: contain;
-
+            overscroll-behavior-y: none;
+            overflow-x: hidden; /*new*/
         }
 
 
@@ -194,7 +194,7 @@
             justify-content: center;
             align-items: center;
             text-align: center;
-            pointer-events:stroke; /* Make the text clickable */
+            pointer-events: auto; /* Make the text clickable */
             user-select: none; /* Prevent the text from being highlighted */
             z-index: 1;
         }
@@ -232,7 +232,29 @@
             line-height: 25px;
             font-family: 'Inter', sans-serif;
         }
-
+        .main {
+            z-index: 100;
+            transition: all 0.4s;
+            position: absolute;
+            top: 14%;
+            left: 14%;
+            -webkit-text-stroke: 2px #eee9d7;
+            font-variation-settings: "wght" 900, "ital" 1;
+            font-size: 3rem; /* Reduced font size */
+            color: transparent;
+            font-family: "Finesse", sans-serif;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .main:hover {
+            color:transparent;
+            text-shadow: 
+                0px 0px 0px #8c2626, 
+                8px 6px 0px #c72626, 
+                10px 8px 0px #f5ae20, 
+                12px 9px 0px #ffffff, 
+                15px 12px 8px #301969;
+        }
 
    
         @media (max-width: 900px) {
@@ -294,6 +316,14 @@
                 top: 62%;
                 height: 10px;
             }
+            .main {
+            top: 14%;
+            left: 14%;
+            -webkit-text-stroke: 1px #ffffff;
+            font-size: 2rem; /* Reduced font size */
+            color: #c72626;
+            text-shadow: 3px 2px 0px #301969;
+        }
             .pho-link {
                 bottom: 3%;
             }
@@ -315,7 +345,10 @@
         <img src="https://cur.cursors-4u.net/cursor.png" border="0" alt="Phone" style="position:absolute; top: 0px; right: 0px;" /> 
     </a> 
 </head>
+
+
 <body>
+    <a href="aboutme.html" class="main">About me...</a>
     <div class="blue-rectangle"></div>
     <div class="green-square" id="greenSquare">
         <p>Dial phone clockwise to start</p>
@@ -347,6 +380,7 @@
     <audio id="mouseHoldSound" src="audio/mousehold.m4a"></audio>
     <audio id="mouseReleaseSound" src="audio/mouserelease.m4a"></audio>
     <audio id="resetSound" src="audio/Reset.m4a"></audio>
+    
     <script>
         const greyCircle = document.getElementById('greyCircle');
         const whiteBox = document.getElementById('whiteBox');

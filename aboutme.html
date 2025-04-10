@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Me</title>
+  <style>
+ @font-face {
+    font-family: 'Danh-Da'; /*https://republi.sh/#danhda/info*/
+    src: url('fonts/DanhDa-Bold.woff') format('woff');
+    src: url('fonts/DanhDa-Bold.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;}
+
+    @font-face {
+    font-family: 'Finesse'; /*https://republi.sh/#finesse*/
+    src: url('fonts/Finesse-Italic.woff') format('woff');
+    src: url('fonts/Finesse-Italic.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+body {
+    background-image: url('images/bgrep.png');
+    height: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    width: 100%; 
+    position: relative;
+    overscroll-behavior-y: none; /* no overscrolling yesss (https://www.bram.us/2016/05/02/prevent-overscroll-bounce-in-ios-mobilesafari-pure-css/) */
+}
+.green-square {
+            position: absolute;
+            width: 70%;
+            height: 500px;
+            background-image: url("images/greensq.png");
+            background-size: cover;
+            left: 50%;
+            Top: 50%;
+            transform: translateY(35%) translateX(-50%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: rgb(49, 46, 46);
+            box-shadow:5px 5px 10px rgba(0, 0, 0, 0.2);
+            padding-left: 30px;
+            padding-right: 30px;
+            box-sizing: border-box;
+        }
+.red-box {
+    width: 88px;
+    height: 104px;
+    position: absolute;
+    rotate: 25deg;
+    left: 20%;
+    Top: 20%;
+    transform: translateY(150%) translateX(-20%);
+    background: none;
+    background-image: url("images/tem2.PNG");
+    background-size: cover;
+    }
+h1{
+    font-family: "Finesse", sans-serif;
+    font-size: 40px;
+    font-weight: 400;
+    color: #c72626;
+    text-align: center;
+    padding-bottom: 10px;
+}
+p {
+    font-family: "Finesse", sans-serif;
+    font-size: 20px;
+    font-weight: 1px;}
+
+
+    .textbox{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #0b407a;
+    width: 100%;
+    height: 20%;
+    position: absolute; /* Position the element absolutely */
+    top: 80px; /* Align it to the top */
+    left: 50%; /* Center it horizontally */
+    transform: translateX(-50%); /* Adjust for the element's width */
+}
+    main {
+    transition: all 0.5s;
+    -webkit-text-stroke: 3px #ffffff;
+    font-variation-settings: "wght" 900, "ital" 1;
+    font-size: 8rem; /* Reduced font size */
+    text-align: center;
+    color: transparent;
+    font-family: "Finesse", sans-serif;
+    text-shadow: 0px 0px 0px #c72626,
+        5px 5px 0px #f5ae20,
+        10px 8px 0px #f5ae20,
+        15px 12px 0px #ffffff,
+        20px 20px 10px #301969;
+    cursor: pointer;
+}
+
+    main:hover {
+      font-variation-settings: "wght" 100, "ital" 0;
+      text-shadow: none;
+    }
+
+    .scrolling-container {
+      position: fixed;
+      transform: translateY(-50%);
+      width: 200%; /* Double the width to accommodate two images */
+      height: 150px; /* Adjust image height */
+      display: flex;
+      animation: scrollContinuously var(--duration) linear infinite;
+    z-index: -1;
+    }
+ 
+    .scrolling-container img {
+      width: auto;
+      height: 100%; 
+    }
+
+    :root {
+      --duration: 10s; /* Duration of the animation */
+    }
+    @keyframes scrollContinuously {
+      0% {
+        transform: translateX(0%);
+      }
+      100% {
+        transform: translateX(-90%);
+      }
+    }
+    @keyframes scrollContinuously1 {
+      0% {
+        transform: translateX(-90%);
+      }
+      100% {
+        transform: translateX(0%);
+      }
+    }
+
+    @media (max-width: 900px) {
+        h1{
+    font-family: "Finesse", sans-serif;
+    font-size: 25px;
+    font-weight: 400;
+    color: #c72626;
+    text-align: center;
+}
+p {
+    font-family: "Finesse", sans-serif;
+    font-size: 13px;
+    font-weight: 1px;}
+main {
+    transition: all 0.5s;
+    -webkit-text-stroke: 2px #ffffff;
+    font-variation-settings: "wght" 900, "ital" 1;
+    font-size: 6rem; /* Reduced font size */
+    text-align: center;
+    color: transparent;
+    font-family: "Finesse", sans-serif;
+    text-shadow: 0px 0px 0px #c72626,
+        5px 5px 0px #f5ae20,
+        10px 8px 0px #f5ae20,
+        15px 12px 0px #ffffff,
+        20px 20px 10px #301969;
+    cursor: pointer;
+}
+    } 
+  </style>
+</head>
+
+
+<body>
+  <div class="textbox">
+  <main>About Me</main>
+  </div>
+  
+  <div class="scrolling-container">
+    <img src="images/wbanner2.PNG" alt="Scrolling Image">
+    <img src="images/wbanner2.PNG" alt="Scrolling Image">
+    <img src="images/wbanner2.PNG" alt="Scrolling Image">
+
+  </div>
+  <div class="scrolling-container" style="bottom:0; animation: scrollContinuously1 var(--duration) linear infinite;">
+    <img src="images/wbanner2.PNG" alt="Scrolling Image">
+    <img src="images/wbanner2.PNG" alt="Scrolling Image">
+    <img src="images/wbanner2.PNG" alt="Scrolling Image">
+  </div>
+
+  <div class="green-square" id="greenSquare">
+    <div><h1>Hi! I'm Lynne, a Graphic Design student at OCAD University</h1>
+    <p>Thank you for checking out my website!! This is one of my Year 2 projects, and honestly, it’s something I’m really passionate about. My goal is to introduce people to Vietnamese dishes that don’t get nearly enough love. Sure, pho is good, but let’s face it—it’s kind of overrated. There’s so much more to Vietnamese cuisine, especially bún dishes, and I want to give them the spotlight they deserve. </p>
+    <p>Another big reason for creating this site is that most of my favorite recipe websites are blocked by firewalls. Instead of letting that stop me, I thought, why not create my own archive of recipes?
+    And why call it “Chợ Bến Thành”? It’s named after one of the most iconic street markets in Southern Vietnam!</p>
+    <p>All imagery and content are from Vietnamese recipe sites, with translations provided. Each recipe links to the original source under "View Original Recipe."</p>
+    <p>For any questions, contact me at: <strong>nlynne@ocadu.ca</strong</p>
+</div>
+</div>
+<a href="index.html"><div class="red-box"></div></a>
+</body>
+</html>
