@@ -444,10 +444,12 @@ greyCircle.addEventListener('mousedown', (event) => {
 
     // Snap to the nearest 45-degree increment
     const snappedRotation = Math.round(rotation / 45) * 45;
-
+    //https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_scroll_snap
+    
     requestAnimationFrame(() => {
         greyCircle.style.transform = `translate(-50%, -50%) rotate(${snappedRotation}deg)`;
     });
+//my fav line of code, it makes the rotation snaps to a certain degree instead of free rotation
 
     // Calculate full spins
     const spins = Math.floor(snappedRotation / 360);
@@ -461,7 +463,7 @@ greyCircle.addEventListener('mousedown', (event) => {
         }
     }
 
-    const index = Math.floor((Math.abs(snappedRotation / 45) + 8) % 8); //my fav line of code, it makes the rotation snaps to a certain degree instead of free rotation
+    const index = Math.floor((Math.abs(snappedRotation / 45) + 8) % 8); 
     pinkCircleImage.src = images[index];
     greenSquare.querySelector('p').innerHTML = texts[index];
     };
