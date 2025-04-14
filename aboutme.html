@@ -55,13 +55,17 @@ body {
     width: 88px;
     height: 104px;
     position: absolute;
-    rotate: 25deg;
-    left: 20%;
+    left: 13%;
     Top: 20%;
     transform: translateY(150%) translateX(-20%);
     background: none;
     background-image: url("images/tem2.PNG");
     background-size: cover;
+    transition: transform 0.5s ease-in-out;
+    }
+  .red-box:hover {
+    transform: rotate(10deg) scale(1.05) translateY(150%); 
+    
     }
 h1{
     font-family: "Finesse", sans-serif;
@@ -116,8 +120,8 @@ p {
     .scrolling-container {
       position: fixed;
       transform: translateY(-50%);
-      width: 200%; /* Double the width to accommodate two images */
-      height: 150px; /* Adjust image height */
+      width: 200%; /* two images */
+      height: 150px; 
       display: flex;
       animation: scrollContinuously var(--duration) linear infinite;
     z-index: -1;
@@ -129,7 +133,7 @@ p {
     }
 
     :root {
-      --duration: 10s; /* Duration of the animation */
+      --duration: 50s; /* Duration of the animation */
     }
     @keyframes scrollContinuously {
       0% {
@@ -149,18 +153,26 @@ p {
     }
 
     @media (max-width: 900px) {
-        h1{
+      .red-box {
+    left: 10%;
+    Top: 20%;
+    transform: translateY(150%) translateX(-35%);}
+
+      h1{
     font-family: "Finesse", sans-serif;
-    font-size: 25px;
+    font-size: 18px;
     font-weight: 400;
     color: #c72626;
     text-align: center;
+    padding-bottom: 5px;
+    top: 0px;
 }
-p {
+      p {
     font-family: "Finesse", sans-serif;
-    font-size: 13px;
-    font-weight: 1px;}
-main {
+    font-size: 12px;
+    font-weight: 1px;
+  }
+      main {
     transition: all 0.5s;
     -webkit-text-stroke: 2px #ffffff;
     font-variation-settings: "wght" 900, "ital" 1;
@@ -203,7 +215,7 @@ main {
     <p>Another big reason for creating this site is that most of my favorite recipe websites are blocked by firewalls. Instead of letting that stop me, I thought, why not create my own archive of recipes?
     And why call it “Chợ Bến Thành”? It’s named after one of the most iconic street markets in Southern Vietnam!</p>
     <p>All imagery and content are from Vietnamese recipe sites, with translations provided. Each recipe links to the original source under "View Original Recipe."</p>
-    <p>For any questions, contact me at: <strong>nlynne@ocadu.ca</strong</p>
+    <p>Ask me anything! <strong>nlynne@ocadu.ca</strong</p>
 </div>
 </div>
 <a href="index.html"><div class="red-box"></div></a>

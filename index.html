@@ -453,7 +453,7 @@ greyCircle.addEventListener('mousedown', (event) => {
     const spins = Math.floor(snappedRotation / 360);
     if (spins !== fullSpins) {
         fullSpins = spins;
-        const height = Math.min(fullSpins * HEIGHT_PER_SPIN, MAX_HEIGHT); // Max height 400px for 5 full spins
+        const height = Math.min(fullSpins * HEIGHT_PER_SPIN, MAX_HEIGHT); // max height 400px for 5 full spins
         whiteBox.style.height = `${height}px`;
         console.log('Full Spins:', fullSpins, 'White Box Height:', height);
         if (height >= MAX_HEIGHT) {
@@ -461,7 +461,7 @@ greyCircle.addEventListener('mousedown', (event) => {
         }
     }
 
-    const index = Math.floor((Math.abs(snappedRotation / 45) + 8) % 8);
+    const index = Math.floor((Math.abs(snappedRotation / 45) + 8) % 8); //my fav line of code, it makes the rotation snaps to a certain degree instead of free rotation
     pinkCircleImage.src = images[index];
     greenSquare.querySelector('p').innerHTML = texts[index];
     };

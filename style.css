@@ -41,7 +41,9 @@ body {
     background: none;
     background-image: url("images/tem2.PNG");
     background-size: cover;
-    }
+    transition: transform 0.5s ease-in-out;
+}
+
     .content-box {
     background-color: rgba(255, 255, 255, 0.8);
     border-radius: 15px;
@@ -91,6 +93,39 @@ body {
         padding-top: 1em;
     }
 
+    footer {
+        background-color: #8C3F3F; 
+        background-image: url('images/wbanner.PNG');
+        color: white; /* White text */
+        text-align: center;
+        padding: 50px 0;
+        position: relative; 
+        bottom: 0;
+        width: 100%;
+        height: 40%;
+        font-family: "Finesse", sans-serif;
+        box-shadow: 0px -2px 5px rgba(0, 0, 0, 0.2);
+    }
+    .footer-circle {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        margin-left: 10px;
+        margin-right: 10px;
+        padding-bottom: 20px;
+        padding-top: 20px;
+        flex-wrap: wrap;
+    }
+    
+    .footer-circle img {
+        width: auto; 
+        height: 100px;
+        border-radius: 50%;
+        gap: 1%;
+        object-fit: cover;
+        overflow: hidden;
+    }
+
 
 @keyframes rotate {
     from {
@@ -121,7 +156,14 @@ body {
         transform: scaleX(1);
         } /*https://developer.mozilla.org/en-US/docs/Web/CSS/animation-range*/
     }
+.red-box:hover {
+    transform: rotate(10deg) scale(1.05); 
+        }
 
+footer a:hover {
+            color: #f5ae20; /* Change link color on hover */
+        }
+    
 .recipe-button {
     background-color: #8C3F3F;
     color: white;
@@ -214,6 +256,13 @@ li {
         line-height: 48px;
         word-wrap: break-word;
 }
+footer a {
+    color: white; /* White text for links */
+    text-decoration: none; /* Remove underline */
+    margin: 0 15px; /* Add spacing between links */
+    font-size: 20px;
+    transition: color 0.3s ease;
+}
 
 @font-face {
     font-family: 'Danh-Da'; /*https://republi.sh/#danhda/info*/
@@ -303,6 +352,12 @@ li {
     border-radius: 15px;
     cursor: pointer;
     }
+
+    footer a {
+        color: white; /* White text for links */
+        text-decoration: none; /* Remove underline */
+        margin: 0 15px; /* Add spacing between links */
+        font-size: 14px;}
 
     .difficulty {
     margin-bottom: 0%; 
