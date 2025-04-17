@@ -31,7 +31,7 @@
             height: 170px;
             background: #343658;
             background: none;
-            background-image: url("images/wcbanner2.PNG");
+            background-image: url("images/wcbanner2.PNG"); /*https://stackoverflow.com/questions/11502308/adding-dynamic-text-on-image*/
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -382,7 +382,7 @@
     </div>
     <audio id="mouseHoldSound" src="audio/mousehold.m4a"></audio>
     <audio id="mouseReleaseSound" src="audio/mouserelease.m4a"></audio>
-    <audio id="resetSound" src="audio/Reset.m4a"></audio>
+    <audio id="resetSound" src="audio/Reset.m4a"></audio> 
     
     <script>
         const greyCircle = document.getElementById('greyCircle');
@@ -406,7 +406,7 @@
             'images/buncha.png', // Image for Text 6
             'images/bunmangvit.png', // Image for Text 7
             'images/bunbonambo.jpeg'  // Image for Text 8
-        ];
+        ]; //Js array https://www.w3schools.com/js/js_arrays.asp
 
         const texts = [
             'Bún riêu cua is a traditional Vietnamese dish, originating from the Red River Delta in Vietnam. This dish consists of noodles (either bun rối or bun lá) and riêu cua. Riêu cua is a sour soup made from crab roe, crab meat that is pounded and filtered, along with the fruit of the perilla plant, tomatoes, pork fat, fermented rice vinegar, fish sauce, salt, and green onions. This dish has a refreshing, tangy taste. Many street vendors in Vietnam sell bún riêu.',
@@ -421,9 +421,9 @@
 
         let rotation = 0;
         let initialAngle = 0;
-        let fullSpins = 0;
+        let fullSpins = 0; //spinning component https://codepen.io/sandwichsudo/pen/YrWqwG
 
-        //mouse events
+        //mouse events https://developer.mozilla.org/en
 greyCircle.addEventListener('mousedown', (event) => {
     mouseHoldSound.play();
     const rect = greyCircle.getBoundingClientRect();
@@ -554,6 +554,9 @@ greyCircle.addEventListener('touchstart', (event) => {
         });
 
      ScrollTrigger.config({ ignoreMobileResize: true });
+
+     // dish images are credited in "origfinal recipe"
+     // the stamp logo is designed by me
     </script>
 </body>
 </html>
